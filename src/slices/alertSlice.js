@@ -2,7 +2,7 @@ import { createSlice } from '@reduxjs/toolkit';
 
 export const alertSlice = createSlice({
     name: 'alert',
-    initialState: '',
+    initialState: '', //empty string 
     reducers: {
         changeMessage: (state, action) => {
             state = action.payload;

@@ -19,7 +19,6 @@ function App() {
 
       <AddServer />
       <ServersList />
-
       {/* <button onClick={handleAdd}>Add server</button> */}
     </div>
   );

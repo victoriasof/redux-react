@@ -2,6 +2,7 @@ import React from 'react';
 import { useDispatch, useSelector } from 'react-redux';
 import { selectServers, toggleStatus, deleteServer } from '../slices/serversSlice';
 import { changeMessageAsync, selectMessage } from '../slices/alertSlice';
+import Server from './Server';
 
 const ServersList = () => {
     const dispatch = useDispatch();
@@ -27,12 +28,13 @@ const ServersList = () => {
         <div>
             <h2>Servers</h2>
             {servers.map(server => (
-                <p key={server.id}>{server.title} &nbsp;
-                    {server.status ? "online" : "offline" /* ternary operator*/} &nbsp;
-                    <button onClick={() => handleToggle(server.id)}>Toggle Status</button>
-                    <button onClick={() => handleDelete(server.id)}>Delete Server</button>
-                    <button onClick={() => handleAlert(server.title)}>Alert</button>
-                </p>
+                <Server 
+                    key={server.id}
+                    server={server} 
+                    handleDelete={handleDelete} 
+                    handleToggle={handleToggle} 
+                    handleAlert={handleAlert} 
+                />
             ))}
 
             <h2>Alert message example for Async code</h2>

@@ -3,7 +3,7 @@ import { createSlice } from '@reduxjs/toolkit'; // step 8
 // step 9
 export const serversSlice = createSlice({
     name: 'servers',
-    initialState: [],
+    initialState: [], //empty array 
     reducers: {
         addServer: (state, action) => {
             // Here i make changes to the state like this.setState() in Class Components
